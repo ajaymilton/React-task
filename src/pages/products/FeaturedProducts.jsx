@@ -62,7 +62,7 @@ const FeaturedProducts = () => {
                         ({product.rating})
                       </span>
                     </div>
-                    <p className="text-lg font-bold text-yellow-400">
+                    <p className="text-lg font-bold text-orange-500">
                       {product.price}
                     </p>
                     <p className="text-sm line-through text-gray-400">

@@ -11,8 +11,8 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { FaEdit } from "react-icons/fa";
+import Navbar from "../components/Navbar";
 
-// Register Chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -24,7 +24,6 @@ ChartJS.register(
 );
 
 const Dashboard = () => {
-  // Data for Line Chart
   const data = {
     labels: ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
     datasets: [

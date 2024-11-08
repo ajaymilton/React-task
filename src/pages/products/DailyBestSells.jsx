@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaShoppingCart } from "react-icons/fa";
 
 const products = [
   {
@@ -103,44 +103,59 @@ const products = [
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="bg-white p-4 shadow-md w-60">
-      {/* Product Label */}
-      <div className="text-sm font-semibold bg-orange-500 text-white px-2 py-1 inline-block rounded mb-4">
-        {product.label}
-      </div>
+    <div className="bg-white p-4 shadow-md w-60 relative">
+      {/* Discount Label */}
+      {product.label && (
+        <div className="absolute top-0 left-0 text-xs font-semibold bg-orange-500 text-white px-2 py-1">
+          {product.label}
+        </div>
+      )}
+
       {/* Product Image */}
       <img
         src={product.image}
         alt={product.name}
-        className="h-32 w-full object-cover mb-2"
+        className="h-32 w-full object-cover top-4 mb-4 "
       />
+
       {/* Product Info */}
-      <div className="text-center">
-        <h3 className="text-gray-700 font-bold">{product.name}</h3>
-        <p className="text-sm text-gray-500">{product.category}</p>
+      <div className="text-left">
+        <p className="text-sm text-gray-500 mb-1">{product.category}</p>
+        <h3 className="text-gray-700 font-bold mb-1">{product.name}</h3>
+
         <div className="text-yellow-500 my-2">⭐⭐⭐⭐ ({product.rating})</div>
-        <div className="flex justify-center items-center my-2">
-          <span className="text-xl font-semibold text-green-600">
-            {product.price}
+
+        {/* Price */}
+        <div className="flex items-start my-2">
+          <span className="text-lg font-semibold text-orange-500">
+            ${product.price}
           </span>
-          <span className="line-through text-gray-500 ml-2">
-            {product.oldPrice}
-          </span>
+          {product.oldPrice && (
+            <span className="line-through text-gray-500 ml-2">
+              ${product.oldPrice}
+            </span>
+          )}
         </div>
+
         {/* Progress Bar */}
-        <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+        <div className="w-full bg-gray-200 rounded-full h-1 mb-2">
           <div
-            className="bg-orange-500 h-2.5 rounded-full"
+            className="bg-orange-500 h-1 rounded-full"
             style={{
               width: `${(product.sold / product.total) * 100}%`,
             }}
           ></div>
         </div>
-        <p className="text-xs text-gray-500">
+
+        {/* Sold Information */}
+        <p className="text-xs text-gray-500 mb-2">
           Sold: {product.sold}/{product.total}
         </p>
-        <button className="bg-orange-500 text-white px-4 py-2 rounded w-full hover:bg-orange-600 mt-2">
-          Add to cart
+
+        {/* Add to Cart Button */}
+        <button className="bg-orange-500 text-white px-4 py-2 flex items-center justify-center w-full hover:bg-orange-600 mt-2">
+          <FaShoppingCart className="text-sm mr-2" />
+          <span className="text-sm font-semibold">Add to cart</span>
         </button>
       </div>
     </div>
@@ -172,9 +187,7 @@ const DailyBestSells = () => {
 
   return (
     <div className="max-w-screen-lg mx-auto py-8">
-      {/* Header */}
       <div className="flex items-center justify-between mb-6 bg-green-900 p-4 rounded">
-        {/* Title and Navigation Links */}
         <div className="flex items-center space-x-4">
           <h2 className="text-2xl font-bold text-white">Daily Best Sells</h2>
           <nav className="flex space-x-4 text-gray-400">
@@ -189,8 +202,6 @@ const DailyBestSells = () => {
             </span>
           </nav>
         </div>
-
-        {/* Expiration Timer and Carousel Navigation */}
         <div className="flex items-center space-x-6">
           <div className="bg-orange-500 text-white px-3 py-1 font-bold">
             Expires in: 10:56:21

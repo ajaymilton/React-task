@@ -9,8 +9,9 @@ import ProductsCarousel from './pages/ProductsCarousel';
 
 
 const App = () => (
-  <div className="min-h-screen bg-gray-100">
+  <>
   <Navbar />
+  <div className="pt-20">
   <Routes>
     <Route path="/dashboard" element={<Dashboard />} />
     <Route path="/home" element={<Home />} />
@@ -18,7 +19,8 @@ const App = () => (
     <Route path="/expenses" element={<Expenses />} />
     <Route path="/goals" element={<Goals />} />
   </Routes>
-</div>
+  </div>
+  </>
 );
 
 export default App;
