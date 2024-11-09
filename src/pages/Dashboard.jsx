@@ -117,83 +117,98 @@ const Dashboard = () => {
 
         {/* Saving Goal */}
         <div className="p-6 bg-white rounded-2xl shadow">
-      <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-semibold">Saving Goal</h2>
-        <div className="px-4 py-2 text-sm bg-gray-100 rounded-full text-gray-600 flex items-center">
-          10Jun - 30 Dec
-          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between mt-6">
-        {/* Left side - Achievement boxes */}
-        <div className="flex flex-col space-y-4">
-          <div className="flex items-center pl-3 pr-20 py-1 bg-white rounded-xl border border-gray-200">
-            <FaTrophy className="text-gray-400 text-xl mr-3" />
-            <div>
-              <p className="text-sm text-gray-500">Target Achieved</p>
-              <p className="text-lg font-semibold">$101.00</p>
+          <div className="flex justify-between items-center">
+            <h2 className="text-2xl font-semibold">Saving Goal</h2>
+            <div className="px-4 py-2 text-sm bg-gray-100 rounded-full text-gray-600 flex items-center">
+              10Jun - 30 Dec
+              <svg
+                className="w-4 h-4 ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
             </div>
           </div>
-          <div className="flex items-center pl-3 pr-20 py-1 bg-white rounded-xl border border-gray-200">
-            <FaBullseye className="text-gray-400 text-xl mr-3" />
-            <div>
-              <p className="text-sm text-gray-500">This Month Target</p>
-              <p className="text-lg font-semibold">$521.00</p>
-            </div>
-          </div>
-        </div>
 
-        {/* Right side - Gauge */}
-        <div className="flex flex-col items-center">
-          <div className="relative w-40 h-40">
-            {/* Background gauge */}
-            <svg className="w-full h-full transform -rotate-180" viewBox="0 0 100 100">
-              <path
-                d="M 50,50 m 0,-47
+          <div className="flex items-center justify-between mt-6">
+            {/* Left side - Achievement boxes */}
+            <div className="flex flex-col space-y-4">
+              <div className="flex items-center pl-3 pr-20 py-1 bg-white rounded-xl border border-gray-200">
+                <FaTrophy className="text-gray-400 text-xl mr-3" />
+                <div>
+                  <p className="text-sm text-gray-500">Target Achieved</p>
+                  <p className="text-lg font-semibold">$101.00</p>
+                </div>
+              </div>
+              <div className="flex items-center pl-3 pr-20 py-1 bg-white rounded-xl border border-gray-200">
+                <FaBullseye className="text-gray-400 text-xl mr-3" />
+                <div>
+                  <p className="text-sm text-gray-500">This Month Target</p>
+                  <p className="text-lg font-semibold">$521.00</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right side - Gauge */}
+            <div className="flex flex-col items-center">
+              <div className="relative w-40 h-40">
+                {/* Background gauge */}
+                <svg
+                  className="w-full h-full transform -rotate-180"
+                  viewBox="0 0 100 100"
+                >
+                  <path
+                    d="M 50,50 m 0,-47
                    a 47,47 0 1 1 0,94
                    a 47,47 0 1 1 0,-94"
-                fill="none"
-                stroke="#f0f0f0"
-                strokeWidth="6"
-              />
-              {/* Active gauge */}
-              <path
-                d="M 50,50 m 0,-47
+                    fill="none"
+                    stroke="#f0f0f0"
+                    strokeWidth="6"
+                  />
+                  {/* Active gauge */}
+                  <path
+                    d="M 50,50 m 0,-47
                    a 47,47 0 1 1 0,94
                    a 47,47 0 1 1 0,-94"
-                fill="none"
-                stroke="#10B981"
-                strokeWidth="6"
-                strokeDasharray="147.65, 295.31" // This creates the partial circle (half)
-                strokeLinecap="round"
-              />
-            </svg>
-            {/* Center text */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <span className="text-3xl font-bold">45k</span>
+                    fill="none"
+                    stroke="#10B981"
+                    strokeWidth="6"
+                    strokeDasharray="147.65, 295.31" //creates the half circle
+                    strokeLinecap="round"
+                  />
+                </svg>
+                {/* Center text */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <span className="text-3xl font-bold">45k</span>
+                </div>
+              </div>
+
+              {/* Gauge labels */}
+              <div className="w-full flex justify-between mt-2 px-2">
+                <span className="text-base font-medium text-gray-500">$0</span>
+                <span className="text-base font-medium text-gray-500">
+                  $80k
+                </span>
+              </div>
+              <h3 className="font-bold mt-2">Target vs Achievement</h3>
             </div>
           </div>
-          
-          {/* Gauge labels */}
-          <div className="w-full flex justify-between mt-2 px-2">
-            <span className="text-base font-medium text-gray-500">$0</span>
-            <span className="text-base font-medium text-gray-500">$80k</span>
-          </div>
-          <h3 className="font-bold mt-2">Target vs Achievement</h3>
-        </div>
-      </div>
 
-      {/* Add Client button */}
-      <div className="mt-6">
-        <button className="w-full px-4 py-3 border border-emerald-500 text-gray-700 rounded-xl flex items-center justify-center hover:bg-emerald-50 transition-colors">
-          Add Client
-          <FaEdit className="ml-2 text-gray-500" />
-        </button>
-      </div>
-    </div>
+          {/* Add Client button */}
+          <div className="mt-6">
+            <button className="w-full px-4 py-3 border border-emerald-500 text-gray-700 rounded-xl flex items-center justify-center hover:bg-emerald-50 transition-colors">
+              Add Client
+              <FaEdit className="ml-2 text-gray-500" />
+            </button>
+          </div>
+        </div>
       </div>
       {/* Expenses Goals by Category */}
       <h2 className="text-xl font-semibold my-6">Expenses Goals by Category</h2>
