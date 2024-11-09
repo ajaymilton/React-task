@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FiSearch, FiBell, FiSettings } from 'react-icons/fi';
 
 const Navbar = () => (
-  <nav className="bg-gray-200 p-4 rounded-full mx-6 fixed top-0 left-0 right-0 z-50">
+  <nav className="bg-gray-100 p-4 rounded-full mx-6 fixed top-0 left-0 right-0 z-50">
     <div className="container mx-auto flex items-center justify-between">
       {/* Logo Section */}
       <div className="flex items-start bg-white rounded-full pr-10 pl-2 py-1.5 space-x-2 shadow-sm">
